@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animations</title>
+<style>
+div {
+  transition: all linear 0.5s;
+  background-color: rgb(98, 221, 60);
+  height: 100px;
+}
+
+
+.ng-hide {
+  height: 0;
+}
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+</head>
+<body ng-app="myApp">
+<h1>Angular animations</h1>
+<h2>Click Here! <input type="checkbox" ng-model="myCheck"></h2>
+
+<div ng-hide="myCheck"></div>
+
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+</script>
+<style>
+  body {
+    background-color: #faf2e4;
+    margin: 0 15%;
+    font-family: sans-serif;
+    }
+  
+  h1 {
+    text-align: center;
+    font-family: serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    border-bottom: 1px solid #57b1dc;
+    margin-top: 30px;
+  }
+  
+  h2 {
+    color: #5ad13c;
+    font-size: 1em;
+  }
+  .button {
+    background-color: #48d13c;
+    border: 1px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+  }
+</style>
+</body>
+</html>

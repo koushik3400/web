@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>18_ques</title>
+        <script>
+            function drawrec(){
+                var length,breadth;
+                length = document.getElementById("length").value;
+                breadth = document.getElementById("breadth").value;
+                var c = document.getElementById("reccanva");
+                var ctx = c.getContext("2d");
+                ctx.clearRect(0,0,300,150);
+                ctx.beginPath();
+                ctx.rect(20, 20, length, breadth);
+                ctx.stroke();
+            }
+
+            function drawcirc(){
+              var radius;
+              radius = document.getElementById("radius").value;
+              var c = document.getElementById("circcanva");
+              ctx = c.getContext("2d");
+              ctx.clearRect(0,0,300,150);
+              ctx.beginPath();
+              ctx.arc(100,75,radius,0, 2* Math.PI);
+              ctx.stroke();
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <h1>RECTANGLE</h1>
+        <label for="length">Enter length:</label>
+        <input type="number" id="length" name="length"> <br>
+        <label for="length">Enter breadth:</label> 
+        <input type="number" id="breadth" name="breadth"><br>
+        <button onclick="drawrec()">Draw</button> <br>
+        <canvas id="reccanva" width="300px" height="150px" style="border: 1px solid black ;">no canva support</canvas>
+        <hr>
+        <h1>CIRCLE</h1>
+        <label for="radius">Enter radius:</label>
+        <input type="number" id="radius" name="radius"> <br>
+        <button onclick="drawcirc()">Draw</button> <br>
+        <canvas id="circcanva" width="300px" height="150px" style="border: 1px solid black ;">no canva support</canvas>
+        <hr>
+    </body>

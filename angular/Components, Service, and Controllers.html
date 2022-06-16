@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head> <title>AngularJS Expressions</title>
+</head>
+<body>
+<script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<div ng-app="DemoApp" ng-controller="myController">
+<h1 id="bordering" class="style1" align="center"><hello></hello></h1>
+<h1 id="bordering" class="style1" align="center">
+<p>Enter First Operand</p>
+<input type="number" ng-model="val1">
+<p>Enter Second Operand</p>
+<input type="number" ng-model="val2">
+<p>Enter Operator</p>
+<input type="operation" ng-model="operation">
+<p>Result is</p>
+<p>{{result}}<p>
+<input type="button" ng-click="AddMe()" value="Result">
+</h1>
+</div>
+<script>
+var app=angular.module('DemoApp',[])
+app.service('CalcService', function() {
+this.add=function(value1,value2){
+return parseInt(value1) + parseInt(value2);
+}
+this.subtract=function(value1,value2){
+return parseInt(value1) - parseInt(value2);
+}
+this.divide=function(value1,value2){
+return parseInt(value1) / parseInt(value2);
+}
+this.multiply=function(value1,value2){
+return parseInt(value1) * parseInt(value2);
+}
+this.mod=function(value1,value2){
+return parseInt(value1) % parseInt(value2);
+}
+});
+app.controller('myController', function($scope, CalcService) {
+$scope.AddMe = function() {
+switch ($scope.operation) {
+case '+':
+$scope.result = CalcService.add($scope.val1, $scope.val2);
+break;
+case '-':
+$scope.result = CalcService.subtract($scope.val1, $scope.val2);
+break;
+case '/':
+$scope.result = CalcService.divide($scope.val1, $scope.val2);
+break;
+case '*':
+$scope.result = CalcService.multiply($scope.val1, $scope.val2);
+break;
+case '%':
+$scope.result = CalcService.mod($scope.val1, $scope.val2);
+break;
+default:
+$scope.result = "Invalid Selection ";
+break;
+}
+}
+});
+app.component("hello",{
+template:'Arithmetic operation'
+});
+</script>
+</body> </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Angular Video Editor </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <h1>VIDEO PLAYER USING ANGULAR JS</h1>
+    <center><video id="myVdo">
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video></center>
+    <br><br>
+    <center>
+        <button ng-click="play_vdo()">
+            <i class="fa fa-play"></i>
+        </button>
+        <button ng-click="pause_vdo()">
+            <i class="fa fa-pause"></i>
+        </button>
+        <button ng-click="maximize()">
+            <i class="fa fa-expand"></i>
+        </button>
+        <button ng-click="mute_ado()">
+            <i class="fa fa-volume-off"></i>
+        </button>
+        <button ng-click="unmute_ado()" >
+            <i class="fa fa-volume-up"></i>
+        </button> 
+        <button ng-click="speed_ctrl()">
+            2x
+        </button>
+    </center>
+    
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>17_th_Ques</title>
+        <script>
+            function group1(){
+                var tar = document.getElementById("d1");
+                if (tar.style.display !== "none") {
+                    tar.style.display = "none";
+                } else {
+                    tar.style.display = "block";
+                }
+            }
+
+            function group2(){
+                var tar = document.getElementById("d2");
+                if (tar.style.display !== "none") {
+                    tar.style.display = "none";
+                } else {
+                    tar.style.display = "block";
+                }
+            }
+
+            function group3(){
+                var tar = document.getElementById("d3");
+                if (tar.style.display !== "none") {
+                    tar.style.display = "none";
+                } else {
+                    tar.style.display = "block";
+                }
+            }
+
+            function group4(){
+                var tar = document.getElementById("d4");
+                if (tar.style.display !== "none") {
+                    tar.style.display = "none";
+                } else {
+                    tar.style.display = "block";
+                }
+            }
+        </script>
+    </head>
+    <body style="font-size: 60px; padding-left: 30px;">
+        <h1>LIST OF ITEMS</h1>
+        <p>click items to view price</p>
+        <ol>
+            <div id="class1" name="class1">
+                <a href="#1"><li>apple</li></a>
+                <a href="#1"><li>apple</li></a>   
+            </div>
+            <div id="class2" name="class2">
+                <a href="#2"><li>apple</li></a>
+                <a href="#2"><li>apple</li></a> 
+            </div>
+            <div id="class3" name="class3">
+                <a href="#3"><li>apple</li></a>
+                <a href="#3"><li>apple</li></a>    
+            </div>
+            <div id="class4" name="class4">
+                <a href="#4"><li>apple</li></a>
+                <a href="#4"><li>apple</li></a> 
+            </div>
+        </ol>
+        <hr>
+        <div style="margin-top: 800px;">
+        <div id="1">
+            <p>group1</p>
+            <p style="display: none;" id="d1">32rs</p>
+            <button onclick="group1()">confirm</button>
+        </div>
+        <hr>
+        <div id="2" style="margin-top: 800px;">
+            <p>group2</p>
+            <p style="display: none;" id="d2">40rs</p>
+            <button onclick="group2()">confirm</button>
+        </div>
+        <hr>
+        <div id="3" style="margin-top: 800px;">
+            <p>group3</p>
+            <p style="display: none;" id="d3">50rs</p>
+            <button onclick="group3()">confirm</button>
+        </div>
+        <hr>
+        <div id="4" style="margin-top: 800px;">
+            <p>group4</p>
+            <p style="display: none;" id="d4">80rs</p>
+            <button onclick="group4()">confirm</button>
+        </div>
+        </div>
+    </body>
+</html>

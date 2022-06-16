@@ -1,0 +1,49 @@
+<head>
+
+    <title>Clothing - Register</title>
+    <style>
+        body {
+            background-image: url(img/img.jpg);
+            color: aliceblue;
+            font-size: 30px;
+        }
+
+        .register_btn {
+            background-color: beige;
+            color: black;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<center>
+<div class="register_div">
+    <h1 class="brand">Register Here</h1>
+    <form name="register_form" ng-controller="userRegisterCtrl" ng-submit="submitData()" ng-init="populate()">
+        <label class="fname_label" for="">First Name</label><br>
+        <input type="text" name="f_name" id="f_name" placeholder="Koushik" class="f_name" ng-required="true">
+        <div ng-show="register_form.f_name.$touched && register_form.f_name.$invalid">
+            <small style="color: red;">enter valid first name</small>
+        </div><br>
+        <label class="lname_label" for="">Last Name</label><br>
+        <input type="text" name="l_name" id="l_name" class="l_name" placeholder="Ramaraju" ng-required="true">
+        <div ng-show="register_form.l_name.$touched && register_form.l_name.$invalid">
+            <small style="color: red;">enter valid last name</small>
+        </div><br>
+        <label class="email_label" for="">Email</label><br>
+        <input type="email" name="email" id="email" placeholder="koushik@gmail.com" class="email" ng-required="true">
+        <div ng-show="register_form.email.$touched && register_form.email.$invalid">
+            <small style="color: red;">enter valid email-id</small>
+        </div><br>
+        <label class="pwd_label" for="">Password</label><br>
+        <input type="password" name="pwd" id="pwd" placeholder="Asdf@1234" class="pwd" ng-required="true">
+        <div ng-show="register_form.pwd.$touched && register_form.pwd.$invalid">
+            <small style="color: red;">enter valid password</small>
+        </div><br>
+        <input class="register_btn" type="submit" value="Register" ng-disabled="register_form.$invalid">
+        <a class="login_link" href="#!/users">
+            <p>View Existing Users</p>
+        </a>
+    </form>
+</div>
+</center>

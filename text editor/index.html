@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor using AngularJs</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="">
+    <div id="bordering"> 
+        <select ng-model="myVar"> 
+            <option value="" disabled selected>FILE</option> 
+            <option value="new">new</option> 
+            <option value="open">open</option> 
+            <option value="save as">save as</option> 
+            <option value="exit">exit</option> 
+        </select> 
+        <select id= "select" onchange="edit()" ng-model="myvar1"> 
+            <option value="" disabled selected>EDIT</option> 
+            <option value="cut">cut</option> 
+            <option value="copy">copy</option> 
+            <option value="paste">paste</option> 
+        </select> 
+        <div ng-switch="myVar"> 
+            <table> 
+                <tr>
+                    <td>Text to Save:</td>
+                </tr> 
+                <tr> 
+                    <td colspan="3"> 
+                    <textarea id="inputTextToSave" cols="80" rows="25" ngcopy="copied=true" ng-paste="paste=true" ng-cut="cut=true" ></textarea> 
+                    </td> 
+                </tr> 
+            </table> 
+            
+        <div ng-switch-when="new"> 
+            <button><a href="C:\Users\swapna\Desktop\sem-6-web-project\BOOK_THRIFT\ex-8-texteditor">new</a> </button> 
+          
+        </div> 
+        <div ng-switch-when="save as"> 
+            Filename to Save As: 
+            <input id="inputFileNameToSaveAs"> 
+            <button onclick="saveTextAsFile()">Save Text to File</button> 
+        </div> 
+        <div ng-switch-when="open">
+            <table> 
+                <tr> 
+                    <td>Select a File to Load:</td> 
+                    <td><input type="file" id="fileToLoad"></td> 
+                    <td><button onclick="loadFileAsText()">Load Selected File</button></td> 
+                </tr> 
+            </table> 
+        </div> 
+        <div ng-switch-when="exit"> 
+            <button class="btn btn-alt a1" onclick = "exitFile()" id = "exitFile">Close 
+               File
+            </button> 
+        </div> 
+    </div> 
+    <div ng-switch="myvar1"> 
+        <p>You have copied: <b>{{copied}}</b></p> 
+        <p>You have pasted in Textbox: <b>{{paste}}</b></p> 
+        <p>You have cut from Textbox: <b>{{cut}}</b></p> 
+    <div ng-switch-when="copy"> 
+        <button class="btn btn-alt a1" onclick = "copytoClipboard()" id ="copy">Copy</button> 
+    </div> 
+    <div ng-switch-when="paste"> 
+        <button class="btn btn-alt a1" onclick = "pastetoClipboard()" id ="paste">Paste</button> 
+    </div> 
+    <div ng-switch-when="cut"> 
+        <p><button class="btn btn-alt a1" onclick = "cuttoClipboard()" id ="cut">Cut</button> </p>
+    </div> 
+ 
+    </div> 
+   
+</body>
+</html>
+
+
+

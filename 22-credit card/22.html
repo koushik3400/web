@@ -1,0 +1,122 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<style>
+	div.a{
+		border-style: 4px solid dashed black;
+		background: lightblue;	
+		font-size: 20px;
+		padding: 50px;
+		margin: 30px;
+		border-radius: 4px;
+		}
+	 body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+
+</style>
+<script>
+
+	function validate()
+	{
+		var cn=document.getElementById("cn").value;
+		var l=document.getElementById("cn").value.length;
+		var c=cn.toString().slice(0,2);
+		var v=cn.toString().slice(0,1);
+		if(c==34 || c==37)
+		{
+			if(l!=15)
+			{
+				alert('failure!! Card issuer: American Express');
+			}
+			else
+			{
+				alert('success!! Card issuer: American Express');
+			}
+		}
+		else if(c==60 || c==65 || c==81 || c==82)
+		{
+			if(l!=16)
+			{
+				alert('failure!! Card issuer: Rupay');
+			}
+			else
+			{
+				alert('success!! Card issuer: Rupay');
+			}
+		}
+		else if(c>=51 && c<=55)
+		{
+			if(l!=16)
+			{
+				alert('failure!! Card issuer: Mastercard');
+			}
+			else
+			{
+				alert('success!! Card issuer: Mastercard');
+			}
+		}
+		else if(v==4)
+		{
+			if(l!=13 && l!=16)
+			{
+				alert('failure!! Card issuer: Visa');
+			}
+			else
+			{
+				alert('success!! Card issuer: Visa');
+			}
+		}
+		else
+		{
+			alert('failure');
+		}
+
+		
+	}
+
+
+</script>
+</head>
+<body>
+<div class="a">	
+	<h1 style="color: red;font-size: 30px">User details</h1>
+	<form>
+		<input type="text" id="name" placeholder="name" name="name" required/><br>
+		<input type="number" placeholder="age" name="age" required/><br>
+		<label id="gender">Gender:</label>
+		<select id="gender">
+			<option id="male">male</option>			
+			<option id="female">female</option>
+		</select><br>
+		<input type="email" id="email" placeholder="email" name="email" required/><br>
+		<h1 style="color: red;font-size: 30px">Shipping details</h1>
+		<input type="text" id="address" placeholder="address" name="address" required/><br>
+		<input type="text" id="city" placeholder="city" name="city" required/><br>
+		<input type="text" id="state" placeholder="state" name="state" required/><br>
+		<br><br>
+		Select payment method:<br>
+		<input type="radio" id="cod" name="cod"/>
+		<label for="cod">COD</label>
+		<input type="radio" id="card" name="card"/>
+		<label for="card">Card</label>
+		
+
+
+		<h1 style="color: red;font-size: 30px">Card details</h1>
+		<input type="text" placeholder="card number" id="cn" name="cn" pattern="\d*" maxlength="16" required/><br>
+		<input type="password" placeholder="cvv" name="cvv" maxlength="3" required/><br>
+		<label id="Cardtype">Card type:</label>
+		<select id="Cardtype">
+			<option id="Credit">Credit</option>			
+			<option id="Debit">Debit</option>
+		</select><br><br><br>
+		<input type="submit" style="display: flex; color: white; background: red; border-radius: 2px; align: center;" onclick="validate()"/>
+		
+	</form>
+</div>
+</body>
+</html>
